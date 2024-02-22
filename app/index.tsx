@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <View>
       <Text>Home</Text>
-      <Button onPress={() => router.push("/tabs/")} title="タブページへ" />
+      <Button onPress={() => router.replace("/tabs/")} title="タブページへ" />
       <Button onPress={() => router.push("/link/")} title="リンクページへ" />
     </View>
   );
