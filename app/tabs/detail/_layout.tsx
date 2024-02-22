@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Slot, useRouter } from "expo-router";
+import { Slot, Stack, useRouter } from "expo-router";
 
 export default function Layout() {
-  return <Slot />;
+  return <Stack screenOptions={{}}></Stack>;
 }
 
 const styles = StyleSheet.create({});

@@ -1,14 +1,11 @@
-import { Link } from "expo-router";
+import { Link, Stack } from "expo-router";
 import { Text } from "react-native";
 export default function Page() {
   return (
-    <Link
-      href={{
-        pathname: "/detail/text/test",
-      }}
-      push
-    >
-      <Text>Page</Text>
-    </Link>
+    <>
+      <Stack.Screen></Stack.Screen>
+      <Text>DetailPage</Text>
+      <Link href={"/tabs/detail/index2"}>Index2</Link>
+    </>
   );
 }
