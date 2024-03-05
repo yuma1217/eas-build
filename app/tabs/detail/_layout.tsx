@@ -3,7 +3,7 @@ import React from "react";
 import { Slot, Stack, useRouter } from "expo-router";
 
 export default function Layout() {
-  return <Slot />;
+  return <Stack />;
 }
 
 const styles = StyleSheet.create({});
