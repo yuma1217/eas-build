@@ -8,8 +8,12 @@ import { Link } from "expo-router";
 export default function TabOneScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>TabOne</Text>
-      <Link href="/link/">Link</Link>
+      <Link href={{ pathname: "/(app)/link/[id]", params: { id: "1" } }}>
+        1ページ目へ
+      </Link>
+      <Link href={{ pathname: "/(app)/link/[id]", params: { id: "2" } }}>
+        2ページ目へ
+      </Link>
     </View>
   );
 }
