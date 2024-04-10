@@ -3,15 +3,17 @@ import React, { useState } from "react";
 import { Button, Card, TextInput } from "react-native-paper";
 import { useSession } from "@/components/ctx";
 import { router } from "expo-router";
+import { SecureStoreMethod } from "@/context/secure-store";
 
 const SignInPage = () => {
   const { signIn } = useSession();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     // ログインロジック
     console.log(username, password);
+    await SecureStoreMethod.save("username", username);
   };
   return (
     <View style={styles.container}>
@@ -34,6 +36,14 @@ const SignInPage = () => {
           />
           <Button mode="contained" onPress={handleLogin}>
             ログイン
+          </Button>
+          <Button
+            mode="contained"
+            onPress={async () => {
+              await SecureStoreMethod.getValueFor("username");
+            }}
+          >
+            確認
           </Button>
         </Card.Content>
       </Card>
