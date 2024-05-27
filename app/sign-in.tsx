@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Card, TextInput } from "react-native-paper";
 import { useSession } from "@/components/ctx";
 import { router } from "expo-router";
-import { SecureStoreMethod } from "@/context/secure-store";
+import { SecureStorage } from "@/context/secure-storage";
 
 const SignInPage = () => {
   const { signIn } = useSession();
@@ -13,7 +13,7 @@ const SignInPage = () => {
   const handleLogin = async () => {
     // ログインロジック
     console.log(username, password);
-    await SecureStoreMethod.save("username", username);
+    await SecureStorage.save("username", username);
   };
   return (
     <View style={styles.container}>
@@ -40,7 +40,7 @@ const SignInPage = () => {
           <Button
             mode="contained"
             onPress={async () => {
-              await SecureStoreMethod.getValueFor("username");
+              await SecureStorage.getValueFor("username");
             }}
           >
             確認
